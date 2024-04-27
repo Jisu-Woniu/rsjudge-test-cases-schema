@@ -1,0 +1,14 @@
+{
+  "name": "test-cases-schema",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "smol-toml": "^1.1.4"
+  }
+}
