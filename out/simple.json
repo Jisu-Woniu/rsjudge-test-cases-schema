@@ -1,0 +1,21 @@
+{
+  "score": 100,
+  "judge": {
+    "judgeType": "classic",
+    "taskType": "simple",
+    "cases": [
+      {
+        "input": "1.in",
+        "answer": "1.ans"
+      },
+      {
+        "input": "2.in",
+        "answer": "2.ans"
+      }
+    ]
+  },
+  "resourceLimits": {
+    "time": 1000,
+    "memory": 256
+  }
+}

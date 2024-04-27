@@ -1,0 +1,31 @@
+score = 100
+
+[judge]
+judgeType = "classic"
+taskType = "subtask"
+
+[[judge.subtasks]]
+score = 40
+
+[[judge.subtasks.cases]]
+input = "1.in"
+answer = "1.ans"
+
+[[judge.subtasks.cases]]
+input = "2.in"
+answer = "2.ans"
+
+[[judge.subtasks]]
+score = 60
+
+[[judge.subtasks.cases]]
+input = "3.in"
+answer = "3.ans"
+
+[[judge.subtasks.cases]]
+input = "4.in"
+answer = "4.ans"
+
+[resourceLimits]
+time = 1000
+memory = 256

@@ -1,0 +1,9 @@
+score = 100
+
+[judge]
+judgeType = "special-judge"
+checker = "checker.cpp"
+
+[resourceLimits]
+time = 1000
+memory = 256

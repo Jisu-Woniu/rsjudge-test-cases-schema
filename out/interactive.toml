@@ -1,0 +1,9 @@
+score = 100
+
+[judge]
+judgeType = "interactive"
+interactor = "interactor.cpp"
+
+[resourceLimits]
+time = 1000
+memory = 256
