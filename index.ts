@@ -1,9 +1,9 @@
-import { mkdirSync, writeFileSync } from "fs";
+import * as TOML from "smol-toml";
 
 import type { Config } from "./rsjudge-schema";
-import { stringify } from "smol-toml";
+import { mkdir } from "fs/promises";
 
-mkdirSync("out", { recursive: true });
+await mkdir("out", { recursive: true });
 
 const simpleConfig: Config = {
   score: 100,
@@ -12,7 +12,7 @@ const simpleConfig: Config = {
     taskType: "simple",
     cases: [
       { input: "1.in", answer: "1.ans" },
-      { input: "2.in", answer: "2.ans" },
+      { input: "2.in", answer: "2.ans", score: 60 },
     ],
   },
   resourceLimits: {
@@ -21,8 +21,11 @@ const simpleConfig: Config = {
   },
 };
 
-writeFileSync("out/simple.json", JSON.stringify(simpleConfig, null, 2));
-writeFileSync("out/simple.toml", stringify(simpleConfig));
+await Bun.write(
+  Bun.file("out/simple.json"),
+  JSON.stringify(simpleConfig, null, 2)
+);
+await Bun.write(Bun.file("out/simple.toml"), TOML.stringify(simpleConfig));
 
 const subtaskConfig: Config = {
   score: 100,
@@ -52,8 +55,11 @@ const subtaskConfig: Config = {
   },
 };
 
-writeFileSync("out/subtask.json", JSON.stringify(subtaskConfig, null, 2));
-writeFileSync("out/subtask.toml", stringify(subtaskConfig));
+await Bun.write(
+  Bun.file("out/subtask.json"),
+  JSON.stringify(subtaskConfig, null, 2)
+);
+await Bun.write(Bun.file("out/subtask.toml"), TOML.stringify(subtaskConfig));
 
 const interactiveConfig: Config = {
   score: 100,
@@ -67,11 +73,14 @@ const interactiveConfig: Config = {
   },
 };
 
-writeFileSync(
-  "out/interactive.json",
+await Bun.write(
+  Bun.file("out/interactive.json"),
   JSON.stringify(interactiveConfig, null, 2)
 );
-writeFileSync("out/interactive.toml", stringify(interactiveConfig));
+await Bun.write(
+  Bun.file("out/interactive.toml"),
+  TOML.stringify(interactiveConfig)
+);
 
 const specialJudgeConfig: Config = {
   score: 100,
@@ -85,8 +94,11 @@ const specialJudgeConfig: Config = {
   },
 };
 
-writeFileSync(
-  "out/special-judge.json",
+await Bun.write(
+  Bun.file("out/special-judge.json"),
   JSON.stringify(specialJudgeConfig, null, 2)
 );
-writeFileSync("out/special-judge.toml", stringify(specialJudgeConfig));
+await Bun.write(
+  Bun.file("out/special-judge.toml"),
+  TOML.stringify(specialJudgeConfig)
+);

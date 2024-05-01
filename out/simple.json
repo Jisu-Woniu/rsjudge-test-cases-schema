@@ -10,7 +10,8 @@
       },
       {
         "input": "2.in",
-        "answer": "2.ans"
+        "answer": "2.ans",
+        "score": 60
       }
     ]
   },
