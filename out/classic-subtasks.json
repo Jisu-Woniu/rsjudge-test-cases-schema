@@ -1,7 +1,13 @@
 {
   "score": 100,
   "judge": {
-    "judgeType": "classic",
+    "judgeType": "classic"
+  },
+  "resourceLimits": {
+    "time": 1000,
+    "memory": 256
+  },
+  "task": {
     "taskType": "subtask",
     "subtasks": [
       {
@@ -31,9 +37,5 @@
         "score": 60
       }
     ]
-  },
-  "resourceLimits": {
-    "time": 1000,
-    "memory": 256
   }
 }

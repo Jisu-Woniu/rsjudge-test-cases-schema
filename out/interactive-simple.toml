@@ -1,0 +1,21 @@
+score = 100
+
+[judge]
+judgeType = "interactive"
+interactor = "interactor.cpp"
+
+[resourceLimits]
+time = 1000
+memory = 256
+
+[task]
+taskType = "simple"
+
+[[task.cases]]
+input = "1.in"
+answer = "1.ans"
+
+[[task.cases]]
+input = "2.in"
+answer = "2.ans"
+score = 60

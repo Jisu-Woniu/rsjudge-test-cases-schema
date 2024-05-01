@@ -1,7 +1,14 @@
 {
   "score": 100,
   "judge": {
-    "judgeType": "classic",
+    "judgeType": "interactive",
+    "interactor": "interactor.cpp"
+  },
+  "resourceLimits": {
+    "time": 1000,
+    "memory": 256
+  },
+  "task": {
     "taskType": "simple",
     "cases": [
       {
@@ -14,9 +21,5 @@
         "score": 60
       }
     ]
-  },
-  "resourceLimits": {
-    "time": 1000,
-    "memory": 256
   }
 }

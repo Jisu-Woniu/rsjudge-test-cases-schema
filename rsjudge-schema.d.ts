@@ -8,15 +8,13 @@ export interface Config {
   score: number;
   judge: ClassicConfig | InteractiveConfig | SpecialJudgeConfig;
   resourceLimits: ResourceLimits;
+  /**
+   * Task configuration.
+   */
+  task: SimpleTaskConfig | SubtaskConfig;
 }
 
-/**
- * Classic judge configuration.
- */
-export type ClassicConfig = ClassicSimpleCasesConfig | ClassicSubtasksConfig;
-
-interface ClassicSimpleCasesConfig {
-  judgeType: "classic";
+interface SimpleTaskConfig {
   taskType: "simple";
   /**
    * List of test cases.
@@ -24,13 +22,19 @@ interface ClassicSimpleCasesConfig {
   cases: Case[];
 }
 
-interface ClassicSubtasksConfig {
-  judgeType: "classic";
+interface SubtaskConfig {
   taskType: "subtask";
   /**
    * List of subtasks.
    */
   subtasks: Subtask[];
+}
+
+/**
+ * Classic judge configuration.
+ */
+export interface ClassicConfig {
+  judgeType: "classic";
 }
 
 /**
