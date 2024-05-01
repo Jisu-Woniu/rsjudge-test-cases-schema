@@ -1,5 +1,7 @@
 # rsjudge-test-cases-schema
 
+This repository was created with [Bun](https://bun.sh/), install from official website before usage.
+
 To install dependencies:
 
 ```bash
