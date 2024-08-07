@@ -1,9 +1,5 @@
 import * as TOML from "smol-toml";
-
 import type { Config } from "./rsjudge-schema";
-import { mkdir } from "fs/promises";
-
-await mkdir("out", { recursive: true });
 
 const simpleConfig: Config = {
   score: 100,
@@ -24,12 +20,12 @@ const simpleConfig: Config = {
 };
 
 await Bun.write(
-  Bun.file("out/classic-simple.json"),
-  JSON.stringify(simpleConfig, null, 2)
+  "out/classic-simple.json",
+  JSON.stringify(simpleConfig, undefined, 2),
 );
 await Bun.write(
-  Bun.file("out/classic-simple.toml"),
-  TOML.stringify(simpleConfig)
+  "out/classic-simple.toml",
+  TOML.stringify(simpleConfig),
 );
 
 const subtaskConfig: Config = {
@@ -63,12 +59,12 @@ const subtaskConfig: Config = {
 };
 
 await Bun.write(
-  Bun.file("out/classic-subtasks.json"),
-  JSON.stringify(subtaskConfig, null, 2)
+  "out/classic-subtasks.json",
+  JSON.stringify(subtaskConfig, undefined, 2),
 );
 await Bun.write(
-  Bun.file("out/classic-subtasks.toml"),
-  TOML.stringify(subtaskConfig)
+  "out/classic-subtasks.toml",
+  TOML.stringify(subtaskConfig),
 );
 
 const interactiveConfig: Config = {
@@ -91,12 +87,12 @@ const interactiveConfig: Config = {
 };
 
 await Bun.write(
-  Bun.file("out/interactive-simple.json"),
-  JSON.stringify(interactiveConfig, null, 2)
+  "out/interactive-simple.json",
+  JSON.stringify(interactiveConfig, undefined, 2),
 );
 await Bun.write(
-  Bun.file("out/interactive-simple.toml"),
-  TOML.stringify(interactiveConfig)
+  "out/interactive-simple.toml",
+  TOML.stringify(interactiveConfig),
 );
 
 const specialJudgeConfig: Config = {
@@ -131,10 +127,10 @@ const specialJudgeConfig: Config = {
 };
 
 await Bun.write(
-  Bun.file("out/special-judge-subtasks.json"),
-  JSON.stringify(specialJudgeConfig, null, 2)
+  "out/special-judge-subtasks.json",
+  JSON.stringify(specialJudgeConfig, undefined, 2),
 );
 await Bun.write(
-  Bun.file("out/special-judge-subtasks.toml"),
-  TOML.stringify(specialJudgeConfig)
+  "out/special-judge-subtasks.toml",
+  TOML.stringify(specialJudgeConfig),
 );
